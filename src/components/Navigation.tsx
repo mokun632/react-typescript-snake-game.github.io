@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { Difficulty, defaultDifficulty } from '../constants';
 
 type Props = {
   length: number;
@@ -6,8 +7,8 @@ type Props = {
   onChangeDifficulty: (difficulty: number) => void;
 }
 
-const Navigation :FC<Props> = ({ length, difficulty = 3, onChangeDifficulty }) => {
-  const upVisibility = difficulty < 5 ? '' : 'is-hidden'
+const Navigation: FC<Props> = ({ length, difficulty = defaultDifficulty, onChangeDifficulty }) => {
+  const upVisiblity = difficulty < Difficulty.length ? '' : 'is-hidden'
   const downVisibility = difficulty > 1 ? '' : 'is-hidden'
   const onUpDifficulty = () => onChangeDifficulty(difficulty + 1)
   const onDownDifficulty = () => onChangeDifficulty(difficulty -1)
@@ -25,7 +26,7 @@ const Navigation :FC<Props> = ({ length, difficulty = 3, onChangeDifficulty }) =
           <span className="num-board">{difficulty}</span>
           <div className="difficult-button-container">
             <div
-              className={`difficulty-button difficulty-up ${upVisibility}`}
+              className={`difficulty-button difficulty-up ${upVisiblity}`}
               onClick={onUpDifficulty}
             ></div>
             <div
