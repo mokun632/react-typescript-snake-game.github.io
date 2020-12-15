@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { directionWord } from '../App';
+import { directionWord, Direction } from '../constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faArrowLeft,
@@ -13,10 +13,10 @@ type Props = {
 }
 
 const ManipulationPanel :FC<Props> = ({ onChange }) => {
-  const onUp = () => onChange('up');
-  const onRight = () => onChange('right');
-  const onLeft = () => onChange('left');
-  const onDown = () => onChange('down');
+  const onUp = () => onChange(Direction.up)
+  const onRight = () => onChange(Direction.right)
+  const onLeft = () => onChange(Direction.left)
+  const onDown = () => onChange(Direction.down)
 
   return (
     <div className="manipulation-panel">
