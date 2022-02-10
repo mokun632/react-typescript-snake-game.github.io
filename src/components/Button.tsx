@@ -12,7 +12,7 @@ const Button :FC<Props> = ({ status, onStart, onRestart, onStop }) => {
   return (
     <div className="button">
        { status === GameStatus.gameover && <button className="btn btn-gameover" onClick={onRestart}>gameover</button> }
-       { status === GameStatus.init && <button className="btn btn-init" onClick={onStart}>start</button> }
+       { status === GameStatus.init && <button className="btn btn-init" onClick={onStart}>スタート</button> }
        { status === GameStatus.suspended && <button className="btn btn-suspended" onClick={onStart}>start</button> }
        { status === GameStatus.playing && <button className="btn btn-playing" onClick={onStop}>stop</button> }
     </div>
