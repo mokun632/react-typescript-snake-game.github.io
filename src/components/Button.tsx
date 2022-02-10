@@ -23,7 +23,7 @@ const Button: FC<Props> = ({ status, onStart, onRestart, onStop }) => {
       )}
       {status === GameStatus.suspended && (
         <button className="btn btn-suspended" onClick={onStart}>
-          start
+          スタート
         </button>
       )}
       {status === GameStatus.playing && (
